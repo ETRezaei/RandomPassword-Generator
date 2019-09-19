@@ -1,4 +1,4 @@
-function getRandomPass(){
+// function getRandomPass(){
     let userPassLength = prompt("Please pick a password length between 8 to 128");
     if(userPassLength > 7 && userPassLength <= 128){
         
@@ -13,16 +13,20 @@ function getRandomPass(){
         
         for(let i = 0; i < questions.length; i++){
             let userAnswer = confirm(questions[i].q);
-            questions[i].a = userAnswer;
+            //questions[i].a = userAnswer;
 
             if(userAnswer){
-                source + questions[i].data
+                //console.log(questions[i].data);
+                //source.concat( questions[i].data);
+                source = source + questions[i].data;
             }
         }
-        for(let i = 0; i < userPassLength; i++){
-           i = Math.floor(Math.random()*source.length);
-            password = password.concat(source[i])
+        for(let c = 0; c < userPassLength; c++){
+           let i = Math.floor(Math.random()*source.length);
+            password = password + source[i];
+            console.log(password);
         }
+        console.log(password);
   
         //if(questions[0].q
     }
@@ -31,4 +35,4 @@ function getRandomPass(){
     }
     
 
-}
+// }
